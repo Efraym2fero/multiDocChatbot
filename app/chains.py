@@ -1,5 +1,4 @@
 import os
-from dotenv import load_dotenv
 from langchain_mistralai import ChatMistralAI
 from langchain_text_splitters import CharacterTextSplitter
 from langchain_core.output_parsers import StrOutputParser
@@ -7,12 +6,11 @@ from langchain_core.runnables import RunnablePassthrough
 from langchain_community.vectorstores import FAISS 
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_community.embeddings import HuggingFaceEmbeddings
-
+import streamlit as st
 
 from PyPDF2 import PdfReader
 
-load_dotenv()
-api_key = os.getenv("MISTRAL_API_KEY")
+api_key = st.secrets["MISTRAL_API_KEY"]
 
 def format_docs(docs):
         return "\n\n".join(doc.page_content for doc in docs)
