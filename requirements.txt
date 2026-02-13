@@ -7,3 +7,4 @@ langchain_core
 langchain_community
 sentence-transformers
 
+faiss-cpu
