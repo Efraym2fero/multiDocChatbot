@@ -1,0 +1,6 @@
+streamlit 
+streamlit_chat
+
+langchain
+langchain_mistralai
+langchain_text_splitters
